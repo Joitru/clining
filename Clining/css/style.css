@@ -1,0 +1,104 @@
+*{
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.nav-link{
+    text-decoration: none;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    color: #555555;
+    margin-right: 50px;
+}
+
+.nav-link:hover{
+    color: #292929;
+}
+
+.btn{
+    border-radius: 50px;
+    padding: 15px 35px;
+    width: 216px;
+    height: 51px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #1195FF;
+    font-weight: 500;
+    font-size: 16px;
+    color: #FFFF;
+}
+
+
+.header{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.promo{
+    display: flex;
+    margin-top: 100px;
+}
+
+.promo-cont > h3{
+    font-weight: 400;
+    font-size: 18px;
+    color: #292929;
+    margin-bottom: 16px;
+}
+
+.title-promo{
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 104%;
+    color: #555555;
+    margin-bottom: 16px;
+}
+
+.title-promo > span{
+    color: #1195FF;
+}
+
+.promo-cont > p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #292929;
+    margin-bottom: 30px;
+}
+
+.promo-btn{
+    float:left;
+
+}
+
+.promo-cont >h1{
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #1195FF;
+    margin-bottom: 16px;
+    float:left;
+    padding-top: 80px;
+}
+
+.promo-cont >h4{
+    font-weight: 700;
+    font-size: 32px;
+    text-transform: capitalize;
+    text-align: center;
+    color: #555555;
+    float:left;
+}
+
+
+    
