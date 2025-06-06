@@ -47,18 +47,6 @@ body {
     width: 100%;
 }
 
-/* Альтернативный вариант с анимацией "пульсации" */
-/*
-.nav-link:hover {
-    animation: pulse 0.5s ease;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-*/
 
 .nav-link:hover{
     color: #292929;
@@ -477,7 +465,7 @@ color: #292929;
     margin-top: 4px;
 }
 
-/* Обновленные стили для слайдера */
+
 .portfolio-slider {
     text-align: center;
     padding: 60px 0;
@@ -491,9 +479,30 @@ color: #292929;
     position: relative;
 }
 
+.portfolio-slider > h2{
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #1195FF;
+    margin-top: 90px;
+    margin-bottom: 16px;
+}
+
+.portfolio-slider > h1{
+    font-weight: 700;
+    font-size: 32px;
+    text-transform: capitalize;
+    text-align: center;
+    color: #292929;
+    margin-bottom: 20px;
+}
+    
+
 .slider-track {
     position: relative;
-    height: 450px; /* Фиксированная высота для слайдов */
+    height: 450px;
+
 }
 
 .slider-slide {
@@ -598,58 +607,107 @@ color: #292929;
     color: #FFFF;
 }
 
-.footer{
-    width: 100;
+.footer {
+    width: 100%;
     height: 469px;
     background: #1e2746;
-    margin-top: 153px;
+    margin-top: 100px;
 }
 
-.footer-cont{
+.footer-cont {
     display: flex;
 }
 
-.footer-logo{
-    margin-top: 150px;
+.footer-logo {
+    margin-top: 100px;
 }
 
-.footer-logo > p{
+.footer-logo > p {
     font-weight: 400;
     font-size: 16px;
     line-height: 162%;
     color: #fff;
     margin-top: 17px;
+    transition: all 0.3s ease;
 }
 
-.social{
+.footer-logo > p:hover {
+    color: #1195FF;
+    transform: translateX(5px);
+}
+
+.social {
     margin-top: 20px;
-
+    display: flex;
 }
-.social > img{
+
+.social > img {
     margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
 }
 
-.info{
-    margin-top: 150px;  
+.social > img:hover {
+    transform: translateY(-5px) scale(1.1);
+    filter: brightness(1) invert(0) drop-shadow(0 5px 10px rgba(17, 149, 255, 0.5));
 }
 
-.info > h2{
+.info {
+    margin-top: 100px;  
+}
 
+.info > h2 {
     font-weight: 600;
     font-size: 20px;
     color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
 }
 
-.info > p{
+.info > h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #1195FF;
+    transition: width 0.3s ease;
+}
+
+.info > h2:hover::after {
+    width: 100%;
+}
+
+.info > p {
     font-weight: 400;
     font-size: 16px;
     color: #bcbcbc;
     margin-top: 20px;
     margin-bottom: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    padding-left: 0;
 }
 
-.end{
+.info > p:hover {
+    color: #1195FF;
+    transform: translateX(10px);
+    padding-left: 10px;
+}
 
+
+.info > p:hover::before {
+    opacity: 1;
+    left: 0;
+}
+
+.end {
     font-weight: 400;
     font-size: 16px;
     letter-spacing: -0.03em;
@@ -657,4 +715,126 @@ color: #292929;
     text-align: center;
     color: #FFFF;
     margin-top: 50px;
+    transition: all 0.3s ease;
+}
+
+.end:hover {
+    color: #1195FF;
+    letter-spacing: 0.03em;
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    perspective: 1000px;
+}
+
+.card-cust {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    width: 377px;
+    height: 330px;
+    text-align: center;
+    padding: 30px;
+    transition: all 0.5s ease;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-cust.active {
+    transform: translateY(-20px) scale(1.05);
+    border: 2px solid #1195FF;
+    box-shadow: 0 10px 25px rgba(17, 149, 255, 0.3);
+    z-index: 2;
+}
+
+.card-cust:not(.active) {
+    opacity: 0.8;
+    filter: brightness(0.95);
+}
+
+.card-cust > img:first-child {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+ .cust-cont > h2{
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #1195FF;
+    margin-top: 100px;
+    margin-bottom: 16px;
+ }
+
+  .cust-cont > h1{
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 32px;
+    text-transform: capitalize;
+    text-align: center;
+    color: #292929;
+ }
+
+
+.card-cust.active > img:first-child {
+    border-color: #1195FF;
+}
+
+.cards{
+    margin-top: 100px;
+}
+.card-cust > h2 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    text-transform: capitalize;
+    color: #292929;
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.card-cust.active > h2 {
+    color: #1195FF;
+}
+
+.card-cust > h1 { 
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 125%;
+    text-transform: capitalize;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.card-cust > p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    color: #292929;
+    margin-bottom: 20px;
+}
+
+.card-cust > img:last-child {
+    width: 100px;
+    height: auto;
+    margin: 0 auto;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.card-cust.active > img:last-child {
+    opacity: 1;
 }

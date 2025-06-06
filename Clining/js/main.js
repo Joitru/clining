@@ -5,12 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentSlide = 0;
     let slideInterval;
 
-    // Инициализация слайдера
+
     function initSlider() {
-        // Показываем первый слайд
+
         slides[currentSlide].classList.add('active');
         
-        // Создаем точки навигации
+
         slides.forEach((_, index) => {
             const dot = document.createElement('div');
             dot.classList.add('slider-dot');
@@ -23,25 +23,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Переход к указанному слайду
     function goToSlide(index) {
-        // Выходим, если слайд уже активен
+
         if (index === currentSlide) return;
         
-        // Скрываем текущий слайд
+
         slides[currentSlide].classList.remove('active');
         
-        // Обновляем индекс текущего слайда
+
         currentSlide = index;
         
-        // Показываем новый слайд
+
         slides[currentSlide].classList.add('active');
         
-        // Обновляем точки навигации
+
         updateDots();
     }
 
-    // Обновление активной точки
+
     function updateDots() {
         const dots = document.querySelectorAll('.slider-dot');
         dots.forEach((dot, index) => {
@@ -49,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Автоматическое переключение слайдов
+
     function startAutoSlide() {
         slideInterval = setInterval(() => {
             const nextSlide = (currentSlide + 1) % slides.length;
@@ -57,18 +56,38 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     }
 
-    // Сброс таймера автопереключения
+
     function resetTimer() {
         clearInterval(slideInterval);
         startAutoSlide();
     }
 
-    // Инициализация слайдера
+
     initSlider();
     startAutoSlide();
 
-    // Пауза при наведении мыши
+
     const slider = document.querySelector('.slider-container');
     slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
     slider.addEventListener('mouseleave', startAutoSlide);
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const customerCards = document.querySelectorAll('.card-cust');
+    
+
+    const middleIndex = Math.floor(customerCards.length / 2);
+    customerCards[middleIndex].classList.add('active');
+    
+
+    customerCards.forEach(card => {
+        card.addEventListener('click', function() {
+
+            customerCards.forEach(c => c.classList.remove('active'));
+            
+
+            this.classList.add('active');
+        });
+    });
 });
